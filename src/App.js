@@ -1,25 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import Box from "./components/Box/Box";
+import Values from "./components/Values/Values";
+import ValueContext from "./ValueContext";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [borderValues, setBorderValues] = useState([0, 0, 0, 0]);
+
+	return (
+		<ValueContext.Provider value={[borderValues, setBorderValues]}>
+			<div className="App">
+				<Box />
+				<Values />
+			</div>
+		</ValueContext.Provider>
+	);
 }
 
 export default App;

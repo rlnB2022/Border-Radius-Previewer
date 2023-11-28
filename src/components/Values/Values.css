@@ -1,0 +1,14 @@
+.values-container {
+	margin-top: 1rem;
+	background-color: #ccc;
+}
+
+.row {
+	display: flex;
+	width: 150px;
+	justify-content: space-between;
+}
+
+input[type="number"] {
+	width: 50px;
+}
